@@ -58,6 +58,11 @@ export const ProductTable = styled.table`
     font-size: 18px;
     font-weight: bold;
   }
+  div {
+    display: flex;
+    align-items: center;
+  }
+
   input {
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -65,12 +70,6 @@ export const ProductTable = styled.table`
     padding: 6px;
 
     width: 50px;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   button {
