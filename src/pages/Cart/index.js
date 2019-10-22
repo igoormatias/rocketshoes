@@ -12,14 +12,15 @@ import * as CartActions from '../../store/modules/cart/actions';
 
 import { Container, Total, ProductTable } from './styles';
 
-function Cart({ cart, total, removeFromCart, updateAmount }) {
+function Cart({ cart, total, removeFromCart, updateAmountRequest }) {
   function increment(product) {
-    updateAmount(product.id, product.amount + 1);
+    updateAmountRequest(product.id, product.amount + 1);
   }
 
   function decrement(product) {
-    updateAmount(product.id, product.amount - 1);
+    updateAmountRequest(product.id, product.amount - 1);
   }
+
   return (
     <Container>
       <ProductTable>
@@ -40,6 +41,7 @@ function Cart({ cart, total, removeFromCart, updateAmount }) {
               </td>
               <td>
                 <strong>{product.title}</strong>
+                <strong>Carrinho Vazio</strong>
                 <span>{product.priceFormatted}</span>
               </td>
               <td>

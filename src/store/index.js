@@ -6,7 +6,13 @@ import rootSaga from './modules/rootSaga';
 
 // Config Reactototron Redux/Redux-Saga
 
-const sagaMidleware = createSagaMiddleware();
+const sagaMonitor =
+  process.env.NODE_ENV === 'development'
+    ? console.tron.createSagaMonitor()
+    : null;
+const sagaMidleware = createSagaMiddleware({
+  sagaMonitor
+});
 
 const enhacer =
   process.env.NODE_ENV === 'development'
